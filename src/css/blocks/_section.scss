@@ -1,0 +1,65 @@
+@use '../helpers' as *;
+
+.section {
+  &__header {
+    padding-block: fluid(140, 40);
+    background-color: var(--color-dark-10);
+
+    &-image {
+      --imageSize: #{rem(150)};
+
+      @include square(var(--imageSize));
+
+      &:not(:last-child) {
+        margin-right: fluid(80, 20);
+      }
+
+      @include laptop {
+        --imageSize: #{rem(120)};
+      }
+
+      @include mobile {
+        --imageSize: #{rem(60)};
+      }
+    }
+
+    &-inner {
+      &:has(.section__link) {
+        display: grid;
+        align-items: center;
+        column-gap: 1rem;
+
+        @include mobile-above {
+          grid-template-columns: 1fr auto;
+        }
+
+        @include mobile {
+          row-gap: rem(30);
+        }
+      }
+
+      &:has(.section__header-image) {
+        display: flex;
+      }
+    }
+
+    &-info {
+      display: grid;
+      align-items: start;
+      justify-self: start;
+      row-gap: rem(16);
+
+      @include laptop {
+        row-gap: rem(10);
+      }
+    }
+  }
+
+  &__body {
+    border-block: var(--border);
+  }
+
+  &__link {
+    max-width: rem(360);
+  }
+}

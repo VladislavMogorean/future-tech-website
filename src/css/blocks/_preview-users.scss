@@ -1,0 +1,37 @@
+@use '../helpers/' as *;
+
+.preview-users {
+  &__main {
+    display: grid;
+    grid-template-areas:
+      'label team'
+      'count team';
+    background-color: var(--color-dark-10);
+    border: var(--border);
+    border-radius: fluid(13, 8);
+    padding: rem(30);
+    max-width: fluid(433, 338);
+
+    @include tablet {
+      padding: rem(20);
+    }
+  }
+
+  &__information {
+    display: flex;
+    flex-direction: column;
+    row-gap: fluid(4, 2);
+  }
+
+  &__label {
+    grid-area: label;
+  }
+
+  &__team {
+    grid-area: team;
+  }
+
+  &__count {
+    grid-area: count;
+  }
+}

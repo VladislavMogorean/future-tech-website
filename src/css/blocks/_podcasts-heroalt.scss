@@ -1,0 +1,28 @@
+@use '../helpers' as *;
+
+.podcasts-heroalt {
+  background-color: var(--color-dark);
+
+  &__header {
+    padding-block: fluid(140, 40);
+  }
+
+  &__info {
+    display: grid;
+    align-items: start;
+    justify-self: start;
+    row-gap: rem(20);
+
+    @include laptop {
+      row-gap: rem(10);
+    }
+
+    &-description {
+      font-weight: 500;
+    }
+  }
+
+  &__body {
+    border-block: var(--border);
+  }
+}

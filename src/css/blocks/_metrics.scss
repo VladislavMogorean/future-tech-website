@@ -1,0 +1,68 @@
+@use '../helpers' as *;
+
+.metrics {
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    &--column-4-cols {
+      grid-template-columns: repeat(4, 1fr);
+      @include mobile {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: start;
+    row-gap: rem(10);
+    padding: rem(50);
+
+    &--centered {
+      justify-content: center;
+      align-items: center;
+      padding: rem(80);
+
+      @include laptop {
+        padding: rem(60) rem(80);
+      }
+
+      @include tablet {
+        padding: rem(40) rem(60);
+      }
+
+      @include mobile {
+        border-bottom: var(--border);
+      }
+    }
+
+    @include laptop {
+      row-gap: rem(2);
+      padding: rem(30) rem(40);
+    }
+
+    @include tablet {
+      row-gap: rem(0);
+      padding: rem(20);
+    }
+
+    &:not(:last-child) {
+      border-right: var(--border);
+    }
+  }
+
+  &__value {
+    font-weight: 600;
+
+    &--big {
+      @include fluid-text(60, 24);
+      color: var(--color-light);
+    }
+  }
+
+  &__sign {
+    color: var(--color-accent);
+  }
+}

@@ -1,0 +1,47 @@
+@use '../helpers/' as *;
+
+.about {
+  padding-block: fluid(120, 40);
+  padding-inline: fluid(150, 16);
+
+  &__cards-main {
+    display: grid;
+    gap: rem(20);
+    padding: fluid(20, 10);
+    background-color: var(--color-dark);
+    border-block: var(--border);
+    border-radius: rem(12);
+
+    @include laptop {
+      gap: rem(10);
+      padding: rem(10);
+      border-radius: rem(10);
+    }
+
+    @include laptop-above {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+    row-gap: fluid(20, 10);
+
+    &-title {
+      align-items: center;
+      @include fluid-text(22, 16);
+      font-family: var(--font-family-base);
+      font-weight: 600;
+    }
+
+    &-link {
+      display: grid;
+      row-gap: rem(4);
+
+      @include laptop {
+        row-gap: rem(2);
+      }
+    }
+  }
+}

@@ -1,0 +1,65 @@
+@use '../helpers/' as *;
+
+.topics {
+  &__info {
+    display: flex;
+    justify-content: end;
+    column-gap: fluid(30, 20);
+
+    &--column {
+      display: flex;
+      flex-direction: column;
+      padding-bottom: fluid(50, 20);
+      row-gap: fluid(14, 8);
+      font-weight: 500;
+      padding-top: fluid(24, 20);
+    }
+
+    &--with-button {
+      display: grid;
+      grid-template-areas:
+        'title button'
+        'description button';
+      align-items: start;
+      justify-content: start;
+      padding-bottom: fluid(50, 20);
+      padding-top: fluid(24, 20);
+      row-gap: fluid(14, 8);
+      font-weight: 500;
+
+      @include mobile {
+        grid-template-areas:
+          'title'
+          'description'
+          'button';
+        grid-template-columns: 1fr;
+      }
+    }
+
+    &-title {
+      grid-area: title;
+    }
+
+    &-description {
+      grid-area: description;
+    }
+
+    &-button {
+      grid-area: button;
+      max-height: rem(63);
+      background-color: var(--color-dark-10);
+    }
+
+    @include mobile {
+      flex-direction: column;
+      row-gap: fluid(10, 8);
+    }
+  }
+
+  &__image {
+    width: 100%;
+    height: auto;
+    border-radius: fluid(12, 10);
+    padding-block: fluid(30, 24);
+  }
+}

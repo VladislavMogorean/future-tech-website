@@ -1,0 +1,29 @@
+@use '../helpers' as *;
+
+.preview-podcasts {
+  &__main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    background-color: var(--color-dark-10);
+    border: var(--border);
+    border-radius: fluid(13, 8);
+    padding: rem(30);
+    max-width: fluid(520, 358);
+
+    @include tablet {
+      padding: rem(20);
+    }
+  }
+
+  &__information {
+    display: flex;
+    flex-direction: column;
+    row-gap: fluid(4, 2);
+  }
+
+  &__count {
+    color: var(--color-light);
+  }
+}

@@ -1,0 +1,41 @@
+@use '../helpers' as *;
+
+.reports {
+  background-color: var(--color-dark-10);
+  &__header {
+    padding-block: fluid(140, 40);
+  }
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 1rem;
+
+    @include mobile {
+      flex-direction: column;
+      align-items: center;
+      row-gap: rem(16);
+    }
+  }
+
+  &__info {
+    display: grid;
+    align-items: start;
+    justify-self: start;
+    row-gap: rem(20);
+
+    @include laptop {
+      row-gap: rem(10);
+    }
+
+    &-description {
+      font-weight: 500;
+    }
+  }
+
+  &__body {
+    background-color: var(--color-dark);
+    border-block: var(--border);
+  }
+}
